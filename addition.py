@@ -5,4 +5,4 @@ puthon"""
 a=10
 b=27
 c= a+b
-print("the addithon would sum up to",c)
+print("the answer would be",c)
