@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Nav Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: beige; /* Beige background for the whole page */
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: teal; /* Teal background for the navbar */
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: aquamarine; /* Aquamarine color on hover */
+      border-radius: 5px;
+    }
+
+    .navbar a.active {
+      background-color: aquamarine; /* Aquamarine color for active link */
+      border-radius: 5px;
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 20px;
+      display: none; /* Hide all sections by default */
+    }
+
+    .form-container {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: teal; /* Teal background for button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: aquamarine; /* Aquamarine hover for button */
+    }
+
+    .points-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .points-section button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: aquamarine; /* Aquamarine background for the points button */
+      color: teal; /* Teal text color for button */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .points-section button:hover {
+      background-color: teal; /* Teal hover for points button */
+      color: white;
+    }
+
+    .book-list {
+      text-align: left;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .book-list h3 {
+      margin-bottom: 10px;
+    }
+
+    .book-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .book-list ul li {
+      padding: 5px 0;
+    }
+
+    .search-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .search-container input {
+      padding: 8px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-container button {
+      padding: 8px 15px;
+      background-color: teal; /* Teal background for search button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .search-container button:hover {
+      background-color: aquamarine; /* Aquamarine hover for search button */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .book {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .book h4 {
+      margin: 0;
+    }
+
+    .book p {
+      margin: 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#personal-info">Personal Info</a>
+    <a href="#account">Account</a>
+    <a href="#library">Library</a>
+  </div>
+
+  <div id="home" class="content">
+    <h1>Welcome to Home</h1>
+    <p>This is the Home section.</p>
+  </div>
+
+  <div id="personal-info" class="content">
+    <h1>Personal Info</h1>
+    <p>Here you can manage your personal information.</p>
+  </div>
+
+  <div id="account" class="content">
+    <h1>Account</h1>
+    <p>Manage your account settings here.</p>
+    <div class="form-container">
+      <form id="account-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age">
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" placeholder="Enter your height">
+
+        <button type="button" onclick="saveAccountInfo()">Save</button>
+      </form>
+    </div>
+
+    <div class="points-section">
+      <h2>Points System</h2>
+      <p>Your current points: <span id="points">0</span></p>
+      <button onclick="addPoints()">Add Points for Reading a Book</button>
+    </div>
+  </div>
+
+  <div id="library" class="content">
+    <h1>Library</h1>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search for a book...">
+      <button onclick="searchBooks()">Search</button>
+    </div>
+    <div id="book-list" class="book-list">
+      <h3>Children's Books:</h3>
+      <div class="book">
+        <h4>Charlotte's Web</h4>
+        <p>Author: E.B. White</p>
+        <p>Description: A story of a pig named Wilbur and his friendship with a barn spider named Charlotte.</p>
+      </div>
+      <div class="book">
+        <h4>The Very Hungry Caterpillar</h4>
+        <p>Author: Eric Carle</p>
+        <p>Description: A caterpillar eats his way through a variety of foods before pupating and emerging as a butterfly.</p>
+      </div>
+      <div class="book">
+        <h4>Goodnight Moon</h4>
+        <p>Author: Margaret Wise Brown</p>
+        <p>Description: A bedtime story about a bunny saying goodnight to various objects in "the great green room."</p>
+      </div>
+      <div class="book">
+        <h4>Where the Wild Things Are</h4>
+        <p>Author: Maurice Sendak</p>
+        <p>Description: A story about Max, who sails to the land of the Wild Things and becomes their king.</p>
+      </div>
+      <div class="book">
+        <h4>Green Eggs and Ham</h4>
+        <p>Author: Dr. Seuss</p>
+        <p>Description: A playful rhyme about trying new things and being open-minded.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for smooth scrolling and active link highlight
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelectorAll('.navbar a').forEach(navLink => {
+          navLink.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        // Hide all sections
+        document.querySelectorAll('.content').forEach(section => {
+          section.style.display = 'none';
+        });
+
+        // Show the clicked section
+        targetSection.style.display = 'block';
+      });
+    });
+
+    // Save account information
+    function saveAccountInfo() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const height = document.getElementById('height').value;
+
+      if (name && age && height) {
+        alert(`Account Information Saved:\nName: ${name}\nAge: ${age}\nHeight: ${height} cm`);
+      } else {
+        alert('Please fill in all fields before saving.');
+      }
+    }
+
+    // Points system
+    let points = 0;
+
+    function addPoints() {
+      points += 10; // Add 10 points for each book read
+      document.getElementById('points').textContent = points;
+      alert(`You earned 10 points! Your total points are now: ${points}`);
+    }
+
+    // Search for books
+    function searchBooks() {
+      const query = document.getElementById('search-bar').value.toLowerCase();
+      const books = document.querySelectorAll('.book');
+
+      books.forEach(book => {
+        if (book.textContent.toLowerCase().includes(query)) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+

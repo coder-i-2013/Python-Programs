@@ -16,10 +16,11 @@ a=360.0/ns
 b=15
 for c in range(ns):
     polygon.penup()
-    polygon.left(45)
-    polygon.forward(b)
 for i in range(ns):
+    polygon.left(45)
     polygon.pendown()
     polygon.forward(sl)
+    polygon.forward(sl)
+
     polygon.right(a)
 turtle.done()

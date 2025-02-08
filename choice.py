@@ -11,6 +11,8 @@ elif choice== 2:
     print("what type of car 1 Jeep 2 SUV")
     choice2= int(input("Enter your choice"))
     if choice2==1:
-        print("tyou have selected a SUV")
+        print("you have selected a Jeep")
     else:
-        print("you have selected Jeep")
+        print("you have selected SUV")
+else:
+    print("wrong choice")

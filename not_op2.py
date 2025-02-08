@@ -6,4 +6,4 @@ a= int(input("Enter a number:  "  ))
 if a%2!=0:
     print("the number given is not even")
 else:
-    print("the number given is even ")
+    print("the number given is even224 ")

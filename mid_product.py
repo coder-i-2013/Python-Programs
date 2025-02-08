@@ -1,5 +1,5 @@
-num=int(input("enter a number: "))
-t= num
+number=int(input("enter a number: "))
+t= number
 numlen=0
 while t>0:
     numlen+=1
@@ -7,16 +7,16 @@ while t>0:
 if numlen >= 4:
     numlen=int(numlen/2)
     chk=0
-    while num>0:
-        rem=num%10
+    while number>0:
+        remainder=number%10
         if chk==numlen:
-            mid1=rem
+            mid1=remainder
         elif chk==(numlen-1):
-            mid2=rem
-        num=int(num/10)
+            mid2=remainder
+        number=int(number/10)
         chk=chk+1
     product=mid1*mid2
-    print("the product of the middle digts are",product)
+    print("The product of the middle digts are",product)
 else:
-    print("this not a 4 or larger than 4 digit number")
+    print("This not a 4 or larger than 4 digit number")
 
