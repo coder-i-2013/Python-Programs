@@ -1,6 +1,8 @@
-def DecToBia(num):
-    if num>=1:
-        DecToBia(num//2)
-    print(num % 2,end="")
-dtb=float(input("Enter a number to convert: "))
-DecToBia(dtb)
+decimal_num = float(input("Enter a decimal number: "))
+binary_num = ""
+
+while decimal_num > 0:
+    binary_num = str(decimal_num % 2) + binary_num
+    decimal_num = decimal_num // 2
+
+print("Binary representation is:", binary_num)
