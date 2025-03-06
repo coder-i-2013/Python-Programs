@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #f4f4f4;
+                color: #333;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav {
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .logo {
+                margin-right: auto;
+                margin-left: 15px;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                color: #333;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+                font-weight: bold;
+            }
+
+            nav ul li a:hover {
+                background-color: #e0f7fa;
+                border-radius: 4px;
+            }
+
+            .main-section-content {
+                padding: 20px;
+                background-color: #fff;
+                margin: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-section-content h3 {
+                color: #007acc;
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            table {
+                width: 80%;
+                margin: 20px auto;
+                border-collapse: collapse;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #007acc;
+                color: #fff;
+                padding: 10px;
+            }
+
+            td {
+                padding: 10px;
+                text-align: center;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #fff;
+            }
+
+            .slider {
+                position: relative;
+                width: 80%;
+                margin: 20px auto;
+                overflow: hidden;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .slides {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .slides img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .prev, .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            .prev {
+                left: 10px;
+            }
+
+            .next {
+                right: 10px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: #007acc;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <img src="digital_literacy_logo.png" alt="Digital Literacy Logo" class="logo">
+            <ul>
+                <li><a href="NGO.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="impact.html">Impact</a></li>
+            </ul>
+        </nav>
+        <div id="open-timings" class="main-section-content">
+            <h3>Open Timings</h3>
+            <table>
+                <tr>
+                    <th>Monday</th>
+                    <td>11:00 am - 03:00 pm</td>
+                    <td>https://meet.google.com/ung-xstx-vcg</td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td>11:00 am - 03:00 pm</td>
+                    <td>https://meet.google.com/ung-xstx-vcg/td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td>11:00 am - 03:00 pm</td>
+                    <td>https://meet.google.com/ung-xstx-vcg</td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td>11:00 am - 03:00 pm</td>
+                    <td>https://meet.google.com/ung-xstx-vcg/td>
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    <td>11:00 am - 03:00 pm</td>
+                    <td>https://meet.google.com/ung-xstx-vcg</td>
+                </tr>
+            </table>
+        </div>
+        <div id="other-events" class="main-section-content">
+            <h3>Other Events</h3>
+            <div class="slider">
+                <div class="slides">
+                    <img src="event1.jpg" alt="Event 1">
+                    <img src="event2.jpg" alt="Event 2">
+                    <img src="event3.jpg" alt="Event 3">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        <script>
+            let currentIndex = 0;
+            const slides = document.querySelector('.slides');
+
+            function moveSlide(direction) {
+                const totalSlides = slides.children.length;
+                currentIndex += direction;
+
+                if (currentIndex < 0) {
+                    currentIndex = totalSlides - 1;
+                } else if (currentIndex >= totalSlides) {
+                    currentIndex = 0;
+                }
+
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        </script>
+    </body>
+</html>

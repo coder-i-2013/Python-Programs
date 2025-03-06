@@ -1,94 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meet Our Teachers</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      background-color: white;
-      align-items: center;
-      text-align: center;
-      margin: auto;
-      font-family: Arial, sans-serif;
-    }
-    .main-section-content {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .teachers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .teachers-info {
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .teachers-info img {
-      width: 100px;
-      height: 100px;
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Teachers</title>
+    <style>
+        /* General styles */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h2, h3 {
+            color: #007acc;
+        }
+        /* Navbar styles */
+        nav {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            margin-right: auto;
+            margin-left: 15px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: #e0f7fa;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        /* Teacher section styles */
+        .main-section-content {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .teachers-info {
+            text-align: center;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .teachers-info img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .teachers-info h3 {
+            margin: 10px 0 5px;
+        }
+        .teachers-info p {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <div id="main-section">
-    <!--Content-1-->
-    <div class="main-section-content">
-      <h2>Meet our teachers</h2>
-      <div class="teachers-grid">
-        <div class="teachers-info">
-          <img src="teach 1.jpg" alt="Ms. Sarah">
-          <h3>Ms. Sarah</h3>
-          <p>She teaches elementary school kids. She has a bachelor's degree in elementary education.</p>
+    <nav>
+        <img src="digital_literacy_logo.png" alt="Digital Literacy Logo" class="logo">
+        <ul>
+            <li><a href="NGO.html">Home</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="impact.html">Impact</a></li>
+        </ul>
+    </nav>
+    <div id="main-section" class="main-section-content">
+        <h2>Meet Our gtoup</h2>
+        <div class="teachers-grid">
+            <div class="teachers-info">
+                <img src="teach1.jpg" alt="Ms. Sarah">
+                <h3>_____</h3>
+                <p>________.</p>
+            </div>
+            <div class="teachers-info">
+                <img src="teach2.png" alt="Ms. Luz">
+                <h3>________</h3>
+                <p>________.</i></p>
+            </div>
+            <div class="teachers-info">
+                <img src="teach3.jpg" alt="Ms. Emily">
+                <h3>________</h3>
+                <p>________.</p>
+            </div>
+            <!-- Add more teacher profiles here -->
         </div>
-        <div class="teachers-info">
-          <img src="teach 2.png" alt="Ms. Luz">
-          <h3>Ms. Luz</h3>
-          <p>She teaches secondary school kids. She has a <i>master of arts degree.</i></p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 1.jpg" alt="Ms. Sarah">
-          <h3>Ms. Sarah</h3>
-          <p>She teaches elementary school kids. She has a bachelor's degree in elementary education.</p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 2.png" alt="Ms. Luz">
-          <h3>Ms. Luz</h3>
-          <p>She teaches secondary school kids. She has a <i>master of arts degree.</i></p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 1.jpg" alt="Ms. Sarah">
-          <h3>Ms. Sarah</h3>
-          <p>She teaches elementary school kids. She has a bachelor's degree in elementary education.</p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 2.png" alt="Ms. Luz">
-          <h3>Ms. Luz</h3>
-          <p>She teaches secondary school kids. She has a <i>master of arts degree.</i></p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 1.jpg" alt="Ms. Sarah">
-          <h3>Ms. Sarah</h3>
-          <p>She teaches elementary school kids. She has a bachelor's degree in elementary education.</p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 2.png" alt="Ms. Luz">
-          <h3>Ms. Luz</h3>
-          <p>She teaches secondary school kids. She has a <i>master of arts degree.</i></p>
-        </div>
-        <div class="teachers-info">
-          <img src="teach 1.jpg" alt="Ms. Sarah">
-          <h3>Ms. Sarah</h3>
-          <p>She teaches elementary school kids. She has a bachelor's degree in elementary education.</p>
-        </div>
-      </div>
     </div>
-  </div>
-</body
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ and Layout Example</title>
+    <style>
+        /* General styles */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .grid-container h2 {
+            color: #007acc;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        /* Navbar styles */
+        nav {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            margin-right: auto;
+            margin-left: 15px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: #e0f7fa;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        /* FAQ section styles */
+        .faq-section {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .faq-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            margin: 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #e0f7fa;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 20px;
+            border-left: 3px solid #007acc;
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="digital_literacy_logo.png" alt="Digital Literacy Logo" class="logo">
+        <ul>
+            <li><a href="NGO.html">Home</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="impact.html">Impact</a></li>
+        </ul>
+    </nav>
+    <div id="FAQ"  class="grid-container">
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">What are some clues that messages are calls might be a scam?</div>
+            <div class="faq-answer">
+                Our return policy allows you to return items within 30 days of purchase. Please ensure that the item is in its original condition.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How can I contact customer service?</div>
+            <div class="faq-answer">
+                You can contact our customer service team via email at support@example.com or by calling (123) 456-7890.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What payment methods do you accept?</div>
+            <div class="faq-answer">
+                We accept all major credit cards, PayPal, and bank transfers. Contact us for more payment options.
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // JavaScript to manage FAQ answer toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                // Close all other answers
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.faq-answer').style.display = 'none';
+                    }
+                });
+
+                // Toggle the current answer
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
