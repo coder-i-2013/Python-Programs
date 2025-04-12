@@ -9,7 +9,7 @@ class Flashcard:
 flash=[]
 print("Welcome to Flashcard Application") 
 while(True):
-    word=input("Enter the word you would like to create a flascard of: ")
+    word=input("Enter the word you would like to create a flashcard of: ")
     meaning=input("Enter the meaning or definition of the word")
     flash.append(Flashcard(word,meaning))
     option= int(input("Enter 0 if you want to create another card \nEnter 1 if you are done creating cards: "))
@@ -18,3 +18,4 @@ while(True):
 print("\n Your Flashcards")  
 for i in flash: 
     print(">",i)
+
