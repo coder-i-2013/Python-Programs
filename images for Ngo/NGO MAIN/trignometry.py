@@ -22,7 +22,6 @@ def solve_trigonometry(operation, value, in_degrees=True):
     else:
         return "Invalid operation"
 
-# Example Usage
 print("Sine of 30 degrees:", solve_trigonometry("sin", 30))
 print("Cosine of 60 degrees:", solve_trigonometry("cos", 60))
 print("Tangent of 45 degrees:", solve_trigonometry("tan", 45))
