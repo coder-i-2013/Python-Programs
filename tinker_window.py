@@ -3,7 +3,6 @@ from datetime import date
 window=Tk()
 window.title("Demo Window")
 window.geometry("400x300")
-window.mainloop()
 lbl=Label(text="Hey",fg="white",bg="#072F5F",height =3,width=300)
 name_lbl=Label(text="Enter Your Full Name",bg="light blue",height=3,width=300)
 name_entry=Entry()

@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 
 root=Tk()
-root.geometry
+root.geometry("650x400")
 
 def topwin():
     top= Toplevel()
@@ -44,18 +44,18 @@ def topwin():
             t4.delete(0,END)
             t5.delete(0,END)
 
-            t1.insert(END.str(note2000))
-            t2.insert(END.str(note500))
-            t3.insert(END.str(note100))
-            t4.insert(END.str(note50))
-            t5.insert(END.str(note10))
+            t1.insert(END,str(note2000))
+            t2.insert(END,str(note500))
+            t3.insert(END,str(note100))
+            t4.insert(END,str(note50))
+            t5.insert(END,str(note10))
         except ValueError:
             messagebox.showerror("Error","Please enter a valid number")
     btn=Button(top,text="Calculate",command=calculator)
-    label.place(c=230,y=50)
-    entry.place(c=2-0,y=80)
-    btn.place(c=240,y=120)
-    lbl.place(c=140,y=170)
+    label.place(x=230,y=50)
+    entry.place(x=200,y=80)
+    btn.place(x=240,y=120)
+    lbl.place(x=140,y=170)
 
     l1.place(x=180,y=200)
     l2.place(x=180,y=230)
@@ -70,9 +70,7 @@ def topwin():
     t5.place(x=270,y=320)
     
     top.mainloop()
-button1=Button(root,
-                    text="Let's get started",
-                    command=topwin)
+button1=Button(root,text="Let's get started",command=topwin)
 button1.place(x=260,y=108)
 
 root.mainloop()

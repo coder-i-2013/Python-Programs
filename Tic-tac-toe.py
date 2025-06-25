@@ -14,7 +14,7 @@ def print_board(board):
     print("-+-+-")    
     print(board['1']+ '|' + board['2']+ '|' + board['3'])
 
-def game():
+def game():  
     turn='X'
     count=0
     for i in range (10):
@@ -84,5 +84,6 @@ def game():
         game()    
 if __name__=="__main__":
     game()
+
     
 

@@ -1,4 +1,4 @@
-setX={"green","orange"}
+setX={"green","blue"}
 setY={"blue","yellow"}
 print("the first set is\n",setX)
 print("the second set is\n",setY)

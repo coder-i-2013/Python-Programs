@@ -14,7 +14,7 @@ print(set_d)
 set_e=set(["123","126","122","124","125","122"])
 print(set_e)
 set_e.pop()
-print("this is what  ")
+print("this is what")
 print(set_e)
 
 
